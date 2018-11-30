@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11.17 13.85">
+    <defs>
+        <style>.cls-1{fill:none;stroke:#dadbdf;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px;}</style>
+    </defs>
+    <title>arrowРесурс 1</title>
+    <g>
+        <g>
+            <line class="cls-1" x1="5.68" y1="1.5" x2="5.68" y2="11.7"/>
+            <polyline class="cls-1" points="9.67 8.29 5.68 12.35 1.5 8.16"/>
+        </g>
+    </g>
+</svg>

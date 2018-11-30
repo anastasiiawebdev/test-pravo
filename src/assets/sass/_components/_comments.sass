@@ -1,0 +1,32 @@
+.comments
+	&__btn
+		background-color: transparent
+		color: #454545
+		&::after
+			display: none
+		&::before
+			opacity: 1
+			transform: none
+			border: none
+		&-wrap
+			text-align: center
+			margin-top: 60px
+		&.loading
+			position: relative
+			&::before
+				content: ''
+				background: url(../img/load-icon.svg) center center/contain no-repeat
+				max-height: 20px
+				max-width: 20px
+				position: absolute
+				left: 0
+				top: 0
+				bottom: 0
+				margin: auto 0
+				animation-duration: 2s
+				animation-name: loadingIconRotate
+				animation-iteration-count: infinite
+				animation-timing-function: linear
+		&:hover
+			&::before
+				transform: none

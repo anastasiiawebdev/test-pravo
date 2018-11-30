@@ -1,0 +1,56 @@
+.details
+	position: absolute
+	z-index: 2
+	top: 0
+	left: 0
+	transform: translateX(100%)
+	background-color: #fff
+	opacity: 0
+	pointer-events: none
+	@include r(767)
+		padding-left: 15px
+		padding-right: 15px
+	&-body
+		margin-bottom: 65px
+		opacity: 0
+		transform: translateX(50px)
+		transition:
+			property: transform, opacity
+			duration: .3s
+			timing-function: ease
+			delay: .15s
+	&__item
+		margin-bottom: 25px
+		&:last-child
+			margin-bottom: 0
+	&__aside
+		text-transform: uppercase
+		font-size: 10px
+		&--price
+			bottom: auto
+			top: 0
+	&.show
+		z-index: 10
+		opacity: 1
+		pointer-events: all
+		.details-body
+			transform: translateX(0)
+			opacity: 1
+	&-left
+		&.show
+			&::before
+				opacity: 1
+				left: -5px
+				transform: rotate(-45deg) scale(1)
+			.details-body
+				transform: translateX(0)
+	&-right
+		transform: translateX(0)
+		.details-body
+			transform: translateX(-50px)
+		&.show
+			transform: translateX(-100%)
+			&::before
+				opacity: 1
+				left: -5px
+				transform: rotate(-45deg) scale(1)

@@ -1,0 +1,109 @@
+.video
+	position: relative
+	display: flex
+	overflow: hidden
+	&__body
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		height: 100%
+		object-fit: cover
+		max-width: 100%
+		&[poster]
+			height: 100%
+			min-width: 100%
+			object-fit: cover
+			@include r(576)
+				display: none
+	&__play-btn
+		position: absolute
+		top: 0
+		left: 0
+	&__container
+		max-width: 1035px
+		&_main
+			@include r(992)
+				padding-left: 0
+				padding-right: 0
+	&__btn
+		margin-top: 55px
+		position: relative
+		padding-left: 50px
+		background: $strongPink
+		&::before
+			content: ''
+			background: url(../img/arrow-white.svg) center center/7px auto no-repeat
+			height: 22px
+			width: 22px
+			border: 1.5px solid #fff
+			border-radius: 50%
+			position: absolute
+			left: 15px
+			top: 0
+			bottom: 0
+			margin: auto 0
+			opacity: 1
+			transform: scale(1)
+		&::after
+			display: none
+		&:hover
+			color: #fff
+			&::before
+				animation-name: videoContainerBtnMove
+				animation-duration: .6s
+				animation-timing-function: cubic-bezier(.01, 0, .28, 1)
+		&:hover
+			&::after
+				transform: scale(1)
+				opacity: 1
+	&__title
+		text-transform: none
+		margin-bottom: 56px
+		text-align: left
+		&::before
+			right: auto
+			margin: 0
+			bottom: -28px
+	&__controls
+		&_btn
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			height: 70px
+			width: 70px
+			background-color: #fff
+			border: none
+			border-radius: 50%
+			display: flex
+			justify-content: center
+			align-items: center
+			cursor: pointer
+			&::before
+				content: ''
+				background: url(../img/play.svg) center center/contain no-repeat
+				height: 20px
+				width: 20px
+				display: block
+				transition: filter .3s
+			&.pause
+				&::before
+					background: none
+					content: '\f3a7'
+					font: $font-material
+						size: 20px
+					color: #a70c5d
+			&:focus
+				outline: none
+			&:hover
+				&::before
+					filter: hue-rotate(90deg)
+	&__content
+		p
+			margin-bottom: 30px
+			&:last-of-type
+				margin-bottom: 0
+	&__info
+		padding-bottom: 75px

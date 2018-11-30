@@ -1,0 +1,37 @@
+.link
+	&-primary
+		color: inherit
+		position: relative
+		transition: text-shadow .3s
+		&::before
+			content: ''
+			height: 1px
+			width: 100%
+			max-width: 100%
+			background-color: $classicRose
+			position: absolute
+			bottom: 0
+			left: 0
+			transition: width .3s
+		&:hover
+			text-shadow: 0.5px 0 #a70c5d
+			&::before
+				width: 0
+	&-secondary
+		transition: color .3s
+		position: relative
+		overflow: hidden
+		&::before
+			content: ''
+			width: 0
+			max-width: 0
+			height: 2px
+			background-color: $strongPink
+			position: absolute
+			bottom: -5px
+			transition: width .3s
+		&:hover
+			color: $strongPink
+			&::before
+				max-width: 100%
+				width: 100%

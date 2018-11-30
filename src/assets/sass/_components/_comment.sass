@@ -1,0 +1,96 @@
+.comment
+	& + .comment
+		@include r(767)
+			margin-top: 50px
+	&__head
+		margin-bottom: 15px
+		color: #c9cacf
+		transition: color .3s
+	&__quote
+		font:
+			size: 40px
+			family: serif
+			weight: 900
+		transform: rotate(180deg)
+		width: 25px
+		line-height: 20px
+		transform-origin: 10px 50%
+		position: relative
+		bottom: -13px
+	&__video
+		&-wrap
+			display: block
+			margin-bottom: 0
+			min-height: 0
+			height: auto
+			max-height: 170px
+			overflow: hidden
+			video
+				position: static
+				min-width: 100%
+				width: 100%
+				object-fit: cover
+		&_btn
+			max-height: 45px
+			max-width: 45px
+			&::before
+				background-image: url(../img/video-full.svg)
+				max-height: 10px
+				max-width: 10px
+			&.pause::before
+				color: #000
+				max-height: 10px
+				max-width: 10px
+				font-size: 10px
+			&:hover
+				&::before
+					filter: invert(50%)
+		&-icon
+			svg
+				width: 25px
+				max-height: 25px
+				fill: #c9cacf
+	&__text
+		font:
+			size: 17px
+	&__position
+		display: inline-block
+	&__image
+		height: 50px
+		width: 50px
+		border-radius: 100%
+		overflow: hidden
+		display: flex
+		margin-top: 30px
+		cursor: pointer
+		img
+			object-fit: cover
+			cursor: pointer
+	&__footer
+		display: block
+		margin-top: 15px
+	&__name
+		margin-bottom: 15px
+		transition: color .3s
+		display: block
+	&__from
+		font-size: 12px
+	&__bullet
+		color: $strongPink
+	&__workplace
+		position: relative
+		&::before
+			content: ''
+			height: 1px
+			width: 100%
+			position: absolute
+			bottom: 0
+			left: 0
+			background-color: $ghost
+		&:hover
+			text-shadow: 0.5px 0 $ghost
+	&:hover
+		& .comment__head
+			color: $strongPink
+		& .comment__name
+			color: $strongPink

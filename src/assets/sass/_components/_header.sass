@@ -1,0 +1,87 @@
+.header
+	width: 100%
+	z-index: 20
+	position: fixed
+	top: 0
+	left: 0
+	padding: 20px 0
+	transition: all .3s
+	border-top: 1px solid transparent
+	border-bottom: 1px solid transparent
+	&__container
+		max-width: 1035px
+	&__items
+		display: flex
+		align-items: center
+		@include r(768)
+			justify-content: space-between
+	&__item
+		flex-grow: 0
+		flex-shrink: 1
+		flex-basis: auto
+		& + .header__item
+			@include r(1366)
+				padding-left: 20px
+			@include r(768)
+				padding-left: 0
+	&__logo
+		&:hover
+			.logo-svg-eye
+				transform: scale(1.05)
+		@include r(768)
+			order: 1
+		&-wrap
+			display: flex
+			align-items: center
+	&__language
+		position: relative
+		left: 55px
+		@include r(1366)
+			left: 0
+		@include r(768)
+			order: 2
+	&__menu
+		flex-grow: 1
+		position: relative
+		padding-right: 70px
+		@include r(768)
+			order: 3
+			flex-grow: 0
+			z-index: 10
+			padding-right: 0
+		&-checkbox
+			display: none
+			height: 100%
+			width: 100%
+			position: absolute
+			top: 0
+			left: 0
+			cursor: pointer
+			opacity: 0
+			z-index: 2
+			&:checked
+				& ~ .burger
+					opacity: 1
+					transform: rotate(45deg) translate(-2px, -1px)
+					background: #232323
+				& ~ .burger:nth-last-child(3)
+					opacity: 0
+					transform: rotate(0deg) scale(0.2, 0.2)
+				& ~ .burger:nth-last-child(2)
+					transform: rotate(-45deg) translate(0, -1px)
+				& ~ .menu
+					@include r(768)
+						transform: translateX(-100%)
+			@include r(768)
+				display: block
+	&__menu-item
+		margin-left: 3.5%
+	&.header_change
+		background-color: rgba(255, 255, 255, 0.91)
+		border-top: 1px solid #e7e7e7
+		border-bottom: 1px solid #e7e7e7
+		.menu
+			@include r(768)
+				background-color: #fff
+				border: 1px solid #e7e7e7
+				border-top: 0

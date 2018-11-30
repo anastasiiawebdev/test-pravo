@@ -1,0 +1,19 @@
+.social-icon
+	border-radius: 50%
+	border: 1px solid #dcdcdc
+	height: 40px
+	width: 40px
+	display: flex
+	align-items: center
+	justify-content: center
+	transition: border-color .3s
+	&::before
+		content: ''
+		font-family: $font-awesome-brands
+		font-weight: 900
+		font-size: 12px
+		color: #dcdcdc
+		transition: color .3s
+	&:hover
+		border-width: 2px
+		border-color: #5977be

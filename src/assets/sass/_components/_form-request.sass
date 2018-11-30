@@ -1,0 +1,186 @@
+.form-request
+	&__container
+		max-width: 835px
+		padding-bottom: 30px
+		border-bottom: 1px solid #f4f4f4
+	&__col
+		margin-bottom: 30px
+	&__title
+		text-align: center
+		margin-bottom: 60px
+	.input-label
+		position: absolute
+		top: 50%
+		left: 0
+		transform: translateY(-50%)
+		text-transform: uppercase
+		font-size: 11px
+		font-weight: 500
+		transition: all .3s
+	.input-wrap
+		position: relative
+		height: 30px
+		border-bottom: 1px solid $whisper
+		margin-bottom: 20px
+		&:last-of-type
+			margin-bottom: 50px
+		&::before
+			content: ''
+			width: 0
+			transition: width .3s
+			height: 0
+			border-bottom: 1px solid red
+			display: block
+			position: absolute
+			bottom: -1px
+			left: 0
+		input
+			margin: 0
+			height: 100%
+			width: 100%
+			&::placeholder
+				opacity: 0
+				transition: all .3s
+				color: $whisper
+		&.active
+			.input-label
+				top: -15px
+				transform: translateY(0)
+				color: $whisper
+			input
+				&::placeholder
+					opacity: 1
+		&.error
+			border-bottom: 1px solid transparent
+			&::before
+				width: 100%
+	.textarea
+		&__col
+			top: 30px
+			@include r(767)
+				margin-top: 30px
+		&-wrap
+			border: 1px solid $whisper
+			.textarea-label
+				top: -20px
+				position: absolute
+				left: 15px
+				text-transform: uppercase
+				font-size: 11px
+				font-weight: 500
+			textarea
+				height: 100%
+				width: 100%
+				padding: 15px
+				border: none
+				&::placeholder
+					color: $whisper
+	.checkbox-group
+		padding: 0 20px
+		border: 1px solid $whisper
+		border-top: none
+		position: relative
+		z-index: 1
+		overflow: hidden
+		height: 0
+		opacity: 1
+		transform: translateY(-100%)
+		transition-property: all
+		transition-duration: .3s
+		transition-timing-function: ease
+		transform-origin: center top
+	.checkbox-wrap
+		position: relative
+		padding-left: 25px
+		line-height: 20px
+		margin-bottom: 15px
+		cursor: pointer
+		&:last-child
+			margin-bottom: 0
+		.checkbox
+			position: absolute
+			left: 0
+			top: 0
+			opacity: 0
+			& + label
+				transition: all .3s
+				display: inline-block
+				cursor: pointer
+				&::before
+					content: '\f192'
+					font-family: $font-awesome
+					font-weight: 900
+					color: $whisper
+					font-size: 7px
+					line-height: 20px
+					position: absolute
+					left: 0
+					top: 0
+					transition: color .3s
+			&:checked
+				& + label
+					color: $strongPink
+					text-shadow: .5px 0 $strongPink
+					&::before
+						color: $strongPink
+		&:hover
+			.checkbox
+				& + label
+					text-shadow: .5px 0 $strongPink
+					color: $strongPink
+					&::before
+						color: $strongPink
+	.interests
+		position: relative
+		overflow: hidden
+		&__title
+			text-transform: uppercase
+			font-weight: 500
+			font-size: 11px
+			display: flex
+			align-items: center
+			justify-content: space-between
+			width: 100%
+			background-color: #fcfcfd
+			padding: 20px
+			border: 1px solid $whisper
+			position: relative
+			z-index: 2
+			&::after
+				display: inline-block
+				transform: rotate(0)
+				transition-property: all
+				transition-duration: .3s
+				cursor: pointer
+				font-size: 20px
+				color: $whisper
+			&:hover
+				&::after
+					color: $strongPink
+		&-checkbox
+			position: absolute
+			&:checked
+				& ~ .checkbox-group
+					height: auto
+					opacity: 1
+					transform: translateY(0)
+					padding: 20px
+				& ~ .interests__title
+					&::after
+						transform: rotate(180deg)
+	&__btn
+		border: none
+		margin-top: 30px
+		&::before
+			z-index: 1
+			border-width: 2px
+		&-wrap
+			text-align: center
+		@include r(767)
+			margin-top: 60px
+
+.input-field
+	border: none
+	box-shadow: none
+	outline: none
+	background: none
